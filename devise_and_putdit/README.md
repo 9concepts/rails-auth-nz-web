@@ -9,6 +9,13 @@ Devise で認証をして Pundit で認可をする
 - [ ] パスワードを変更できる
 - [x] サインアウトできる
 
+## Development
+
+```bash
+# Run tests
+bundle exec rspec
+```
+
 ## Troubleshootings
 
 ### Devise が Rails 7 の turbo に非対応
