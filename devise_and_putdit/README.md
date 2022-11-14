@@ -46,7 +46,7 @@ Add support for Rails 7.0. Please note that Turbo integration is not fully suppo
 
 ### Devise が自動生成するルーティングが汚い
 
-`resources :users` で生成できる `users/:id` と `devise_for :users` で生成される　 `users/sign_in` 等がぶつかるやん。
+`resources :users` で生成できる `users/:id` と `devise_for :users` で生成される `users/sign_in` 等がぶつかるやん。
 
 ```ruby
 devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }, path: 'auth'
