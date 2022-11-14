@@ -42,3 +42,15 @@ Add support for Rails 7.0. Please note that Turbo integration is not fully suppo
 #### 参考
 
 - [Rails 7.0 + Ruby 3.1でゼロからアプリを作ってみたときにハマったところあれこれ - Qiita](https://qiita.com/jnchito/items/5c41a7031404c313da1f#devise%E3%81%8Cturbo%E3%81%AB%E5%AF%BE%E5%BF%9C%E3%81%97%E3%81%A6%E3%81%84%E3%81%AA%E3%81%84)
+
+
+### Devise が自動生成するルーティングが汚い
+
+`resources :users` で生成できる `users/:id` と `devise_for :users` で生成される　 `users/sign_in` 等がぶつかるやん。
+
+```ruby
+devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }, path: 'auth'
+```
+
+`path` オプションを与えれば `auth/sign_in` になるから回避できるんや。
+本当は `sessions/new` とかにしたいね。
