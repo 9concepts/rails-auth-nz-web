@@ -8,6 +8,7 @@ Devise で認証をして Pundit で認可をする
 - [x] email と パスワードでサインインできる
 - [ ] パスワードを変更できる
 - [x] サインアウトできる
+- [ ] Dockernize
 
 ## Development
 
