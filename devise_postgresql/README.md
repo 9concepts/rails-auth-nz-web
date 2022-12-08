@@ -15,3 +15,9 @@ bundle init
 bundle add rails
 bundle exec rails new . --css=bootstrap --database=postgresql --skip-jbuilder
 ```
+
+```bash
+bundle exec rails generate devise:install
+bundle exec rails g model user
+bundle exec rails db:migrate
+```
