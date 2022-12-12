@@ -21,3 +21,16 @@ bundle exec rails generate devise:install
 bundle exec rails g model user
 bundle exec rails db:migrate
 ```
+
+```bash
+# Users::SessionsController の生成
+bundle exec rails g devise:controllers users -c=sessions 
+```
+
+[[Rails] devise sign_in/sign_outのデフォルトルーティングをカスタマイズしてlogin/logoutにする](https://tech.mof-mof.co.jp/blog/devise-custom-routes/)
+
+## 疑問
+
+- `devise_scope` は何をしているのか
+
+## Troubleshooting

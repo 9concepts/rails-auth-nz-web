@@ -1,0 +1,15 @@
+.row
+  .col-4
+  .col-4
+    %h2 ログイン
+    = form_with model: resource, url: user_session_path, local: true do |f|
+      .mb-3
+        = f.label :email
+        = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+      .mb-3
+        = f.label :password
+        = f.password_field :password, autocomplete: 'current-password', class: 'form-control'
+
+      .actions
+        = f.submit "ログイン", class: 'btn btn-primary'
+
