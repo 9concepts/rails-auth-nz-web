@@ -34,3 +34,34 @@ bundle exec rails g devise:controllers users -c=sessions
 - `devise_scope` は何をしているのか
 
 ## Troubleshooting
+
+### `Unknown action`
+
+```bash
+Could not find devise mapping for path "/login".
+This may happen for two reasons:
+1) You forgot to wrap your route inside the scope block. For example:
+devise_scope :user do
+get "/some/route" => "some_devise_controller"
+end
+2) You are testing a Devise controller bypassing the router.
+If so, you can explicitly tell Devise which mapping to use:
+@request.env["devise.mapping"] = Devise.mappings[:user]
+```
+
+下記を加えると直った。
+ちなみに、下記がない場合、サーバーを再起動しない限りは動き続ける。
+削除後にサーバーを再起動すると件のエラーになる。原因不明。
+
+```diff
+diff --git a/devise_postgresql/config/routes.rb b/devise_postgresql/config/routes.rb
+index b413ad4..280a50f 100644
+--- a/devise_postgresql/config/routes.rb
++++ b/devise_postgresql/config/routes.rb
+@@ -1,4 +1,5 @@
+ Rails.application.routes.draw do
++  devise_for :users, skip: [:sessions]
+   root "top#index"
+ 
+   devise_scope :user do
+```
