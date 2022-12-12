@@ -1,4 +1,8 @@
-.nav.justify-content-end
+.nav.justify-content-end.d-flex.align-items-center
+  .nav-item.px-2
+    = link_to 'トップ', root_path
+  .nav-item.px-2
+    = link_to 'GitHub 検索', github_path
   - if user_signed_in?
     .nav-item
       = button_to 'ログアウト', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn nav-link'

@@ -7,4 +7,7 @@ Rails.application.routes.draw do
     post 'login', to: 'users/sessions#create', as: :user_session
     delete 'logout', to: 'users/sessions#destroy', as: :destroy_user_session
   end
+
+  get 'github', to: 'searches#index'
+  get 'github/search', to: 'searches#search'
 end
