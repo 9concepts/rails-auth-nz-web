@@ -1,2 +1,4 @@
-- if user_signed_in?
-  = button_to 'ログアウト', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn btn-primary'
+.nav.justify-content-end
+  - if user_signed_in?
+    .nav-item
+      = button_to 'ログアウト', destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'btn nav-link'
