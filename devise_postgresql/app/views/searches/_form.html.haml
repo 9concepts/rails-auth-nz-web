@@ -1,5 +1,5 @@
-= form_tag github_search_path, method: :get do
+= form_with url: github_search_path, method: :get do |f|
   .mb-3
-    = text_field_tag :query, @query, class: 'form-control'
+    = f.text_field :query, value: @query, class: 'form-control'
   .text-center
-    = submit_tag '検索', class: 'btn btn-primary w-25'
+    = f.submit '検索', class: 'btn btn-primary w-25'
