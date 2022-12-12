@@ -2,7 +2,7 @@
   .col-4
   .col-4
     %h2 ログイン
-    = form_with model: resource, url: user_session_path, local: true do |f|
+    = form_with model: resource, url: user_session_path, data: {turbo: false} do |f|
       .mb-3
         = f.label :email
         = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
