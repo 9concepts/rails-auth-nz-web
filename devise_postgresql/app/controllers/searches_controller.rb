@@ -3,5 +3,7 @@ class SearchesController < ApplicationController
   end
 
   def search
+    @query = params[:query]
+    @repositories = GitHubApi.search(@query)
   end
 end
