@@ -1,0 +1,9 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+metadata:
+  name: devise_postgresql
+deploy:
+  helm:
+    releases:
+      - name: devise_postgresql_db
+        chartPath: ./helm/development
