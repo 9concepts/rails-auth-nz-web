@@ -1,2 +1,2 @@
-# rails-auth-nz-web
+# rails-playground
 
