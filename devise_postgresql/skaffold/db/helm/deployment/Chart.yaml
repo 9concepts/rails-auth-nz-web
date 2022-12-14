@@ -1,0 +1,5 @@
+apiVersion: v2
+name: devise-postgresql-db
+sources:
+  - https://github.com/9concepts/rails-playground/tree/main/devise_postgresql/skaffold/db
+version: 1.0.0

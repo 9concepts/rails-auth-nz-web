@@ -1,0 +1,6 @@
+.env
+README.md
+node_modules
+log
+tmp
+skaffold
