@@ -1,0 +1,5 @@
+revision: latest
+postgres:
+  user: developer
+  password: developer
+  db: devise_postgresql_development

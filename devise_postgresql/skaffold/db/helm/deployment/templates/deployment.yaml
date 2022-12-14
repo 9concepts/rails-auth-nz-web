@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+metadata:
+  name: devise-postgresql-db
+  labels:
+    revision: {{ .Values.revision }}
+kind: Deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: devise-postgresql-db
+        revision: {{ .Values.revision }}
+    spec:
+      containers:
+        - name: devise-postgresql-db
+          image: postgres:14.6-alpine
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          resources:
+            limits:
+              memory: 1Gi
+            requests:
+              memory: 0.5Gi
+          env:
+            - name: POSTGRES_USER
+              value: {{ .Values.postgres.user }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.postgres.password }}
+            - name: POSTGRES_DB
+              value: {{ .Values.postgres.db }}
+  selector:
+    matchLabels:
+      name: devise-postgresql-db
