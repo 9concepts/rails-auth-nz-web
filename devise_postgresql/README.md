@@ -101,3 +101,12 @@ E1216 23:41:21.963790   47741 portforward.go:400] an error occurred forwarding 5
 ```
 
 https://github.com/kubernetes/kubectl/issues/1169 issue は見つけたけど解決策不明。
+
+`kubectl port-forward` でポートフォワードしたら接続できた。
+
+```bash
+$ kubectl port-forward --address 0.0.0.0 devise-postgresql-db-74fbc94df-pmsgt 18000:5432
+Forwarding from 0.0.0.0:18000 -> 5432
+Handling connection for 18000
+Handling connection for 18000
+```
