@@ -2,7 +2,7 @@
 
 ```bash
 # Run Database
-docker compose up
+skaffold dev -f skaffold/deps.yaml  --port-forward
 # Run server
 bin/dev
 ```
