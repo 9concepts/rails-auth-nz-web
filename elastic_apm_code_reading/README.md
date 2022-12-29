@@ -1,5 +1,9 @@
 # README
 
+```bash
+bundle exec rails s
+```
+
 ## Troubleshoot
 
 ### `ffi` install failed
