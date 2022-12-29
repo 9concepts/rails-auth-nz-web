@@ -4,6 +4,16 @@
 bundle exec rails s
 ```
 
+## Code reading guide
+
+``bash
+EDITOR=code bundle open elastic-apm
+```
+
+```bash
+gem pristine elastic-apm
+```
+
 ## Troubleshoot
 
 ### `ffi` install failed
